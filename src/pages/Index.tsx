@@ -1,20 +1,22 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact, GraduationCap, ArrowDown } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact, GraduationCap, ArrowDown, Menu } from 'lucide-react';
 
 const Index = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const skills = [
-    "Java",
-    "Data Structures & Algorithms", 
-    "Linux",
-    "HTML/CSS",
-    "JavaScript",
-    "AWS Cloud Basics",
-    "PHP",
-    "MySQL"
+    { name: "Java", icon: "☕" },
+    { name: "Data Structures & Algorithms", icon: "🔧" }, 
+    { name: "Linux", icon: "🐧" },
+    { name: "HTML/CSS", icon: "🌐" },
+    { name: "JavaScript", icon: "⚡" },
+    { name: "AWS Cloud Basics", icon: "☁️" },
+    { name: "PHP", icon: "🐘" },
+    { name: "MySQL", icon: "🗄️" }
   ];
 
   const projects = [
@@ -53,7 +55,17 @@ const Index = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMobileMenuOpen(false);
   };
+
+  const navItems = [
+    { name: 'About', id: 'about', icon: User },
+    { name: 'Education', id: 'education', icon: GraduationCap },
+    { name: 'Skills', id: 'skills', icon: Code },
+    { name: 'Projects', id: 'projects', icon: Briefcase },
+    { name: 'Resume', id: 'resume', icon: FileText },
+    { name: 'Contact', id: 'contact', icon: Contact }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
@@ -64,15 +76,10 @@ const Index = () => {
             <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
               Lohith
             </div>
+            
+            {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {[
-                { name: 'About', id: 'about', icon: User },
-                { name: 'Education', id: 'education', icon: GraduationCap },
-                { name: 'Skills', id: 'skills', icon: Code },
-                { name: 'Projects', id: 'projects', icon: Briefcase },
-                { name: 'Resume', id: 'resume', icon: FileText },
-                { name: 'Contact', id: 'contact', icon: Contact }
-              ].map((item) => (
+              {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
@@ -83,6 +90,31 @@ const Index = () => {
                 </button>
               ))}
             </div>
+
+            {/* Mobile Navigation */}
+            <div className="md:hidden">
+              <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu size={24} />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+                  <div className="flex flex-col space-y-4 mt-8">
+                    {navItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-300 p-3 rounded-lg hover:bg-blue-50"
+                      >
+                        <item.icon size={20} />
+                        <span className="text-lg">{item.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </nav>
@@ -90,15 +122,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Left side - Text content */}
             <div className="animate-fade-in text-center lg:text-left">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
                   Hello, I'm Lohith
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-600 mb-8">
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-600 mb-8">
                 A passionate Computer Science undergrad diving deep into 
                 <span className="text-blue-600 font-semibold"> cloud computing</span>, 
                 <span className="text-green-600 font-semibold"> web development</span>, and 
@@ -122,9 +154,9 @@ const Index = () => {
             </div>
 
             {/* Right side - Profile image */}
-            <div className="flex justify-center lg:justify-end">
+            <div className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-blue-100 to-green-100 transform hover:scale-105 transition-all duration-300">
+                <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-blue-100 to-green-100 transform hover:scale-105 transition-all duration-300">
                   <img 
                     src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=800" 
                     alt="Lohith - Computer Science Student" 
@@ -302,10 +334,13 @@ const Index = () => {
             <p className="text-xl text-gray-600 mt-6">Technologies I work with and love</p>
           </div>
 
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
             {skills.map((skill, index) => (
-              <div key={skill} className="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">{skill}</h3>
+              <div key={skill.name} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {skill.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-800">{skill.name}</h3>
               </div>
             ))}
           </div>
