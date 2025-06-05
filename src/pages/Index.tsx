@@ -1,20 +1,19 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact } from 'lucide-react';
+import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact, GraduationCap } from 'lucide-react';
 
 const Index = () => {
   const skills = [
-    { name: "Java", level: 90 },
-    { name: "Data Structures & Algorithms", level: 85 },
-    { name: "Linux", level: 80 },
-    { name: "HTML/CSS", level: 88 },
-    { name: "JavaScript", level: 82 },
-    { name: "AWS Cloud Basics", level: 75 },
-    { name: "PHP", level: 70 },
-    { name: "MySQL", level: 78 }
+    "Java",
+    "Data Structures & Algorithms", 
+    "Linux",
+    "HTML/CSS",
+    "JavaScript",
+    "AWS Cloud Basics",
+    "PHP",
+    "MySQL"
   ];
 
   const projects = [
@@ -38,6 +37,16 @@ const Index = () => {
     }
   ];
 
+  const education = [
+    {
+      degree: "Bachelor of Technology in Computer Science",
+      institution: "University Name",
+      period: "2021 - 2025",
+      cgpa: "8.5/10",
+      description: "Specializing in software development, data structures, algorithms, and cloud computing. Active participant in coding competitions and technical workshops."
+    }
+  ];
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -57,6 +66,7 @@ const Index = () => {
             <div className="hidden md:flex space-x-8">
               {[
                 { name: 'About', id: 'about', icon: User },
+                { name: 'Education', id: 'education', icon: GraduationCap },
                 { name: 'Skills', id: 'skills', icon: Code },
                 { name: 'Projects', id: 'projects', icon: Briefcase },
                 { name: 'Resume', id: 'resume', icon: FileText },
@@ -162,8 +172,43 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Education Section */}
+      <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Education</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full"></div>
+            <p className="text-xl text-gray-600 mt-6">Academic journey and achievements</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            {education.map((edu, index) => (
+              <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <CardHeader>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <CardTitle className="text-2xl text-gray-800 mb-2">{edu.degree}</CardTitle>
+                      <CardDescription className="text-lg text-blue-600 font-semibold">{edu.institution}</CardDescription>
+                    </div>
+                    <div className="text-right">
+                      <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 mb-2">
+                        {edu.period}
+                      </Badge>
+                      <div className="text-lg font-bold text-gray-800">CGPA: {edu.cgpa}</div>
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 leading-relaxed">{edu.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Skills & Expertise</h2>
@@ -171,19 +216,10 @@ const Index = () => {
             <p className="text-xl text-gray-600 mt-6">Technologies I work with and love</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
             {skills.map((skill, index) => (
-              <div key={skill.name} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="text-lg font-semibold text-gray-800">{skill.name}</h3>
-                  <span className="text-blue-600 font-bold">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div 
-                    className="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+              <div key={skill} className="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center">
+                <h3 className="text-lg font-semibold text-gray-800">{skill}</h3>
               </div>
             ))}
           </div>
