@@ -122,9 +122,29 @@ const Index = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left side - Text content */}
-            <div className="animate-fade-in text-center lg:text-left">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Image - First on mobile, second on desktop */}
+            <div className="order-1 lg:order-2 flex justify-center">
+              <div className="relative">
+                <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-blue-100 to-green-100 transform hover:scale-105 transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=800" 
+                    alt="Lohith - Computer Science Student" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating elements around the image */}
+                <div className="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg animate-float">
+                  <Code size={24} />
+                </div>
+                <div className="absolute -bottom-4 -left-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-float" style={{animationDelay: '1s'}}>
+                  <GraduationCap size={24} />
+                </div>
+              </div>
+            </div>
+
+            {/* Text content - Second on mobile, first on desktop */}
+            <div className="order-2 lg:order-1 animate-fade-in text-center lg:text-left">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
                   Hello, I'm Lohith
@@ -150,26 +170,6 @@ const Index = () => {
                 >
                   Get In Touch
                 </Button>
-              </div>
-            </div>
-
-            {/* Right side - Profile image */}
-            <div className="flex justify-center lg:justify-start">
-              <div className="relative">
-                <div className="w-72 h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-blue-100 to-green-100 transform hover:scale-105 transition-all duration-300">
-                  <img 
-                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=800" 
-                    alt="Lohith - Computer Science Student" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                {/* Floating elements around the image */}
-                <div className="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg animate-float">
-                  <Code size={24} />
-                </div>
-                <div className="absolute -bottom-4 -left-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-float" style={{animationDelay: '1s'}}>
-                  <GraduationCap size={24} />
-                </div>
               </div>
             </div>
           </div>
