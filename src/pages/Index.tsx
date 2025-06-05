@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact, GraduationCap } from 'lucide-react';
+import { Mail, Github, Linkedin, Code, User, FileText, Briefcase, Contact, GraduationCap, ArrowDown } from 'lucide-react';
 
 const Index = () => {
   const skills = [
@@ -88,83 +89,168 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
-                Hello, I'm Lohith
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              A passionate Computer Science undergrad diving deep into 
-              <span className="text-blue-600 font-semibold"> cloud computing</span>, 
-              <span className="text-green-600 font-semibold"> web development</span>, and 
-              <span className="text-purple-600 font-semibold"> problem-solving</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => scrollToSection('projects')}
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
-              >
-                View My Work
-              </Button>
-              <Button 
-                variant="outline"
-                onClick={() => scrollToSection('contact')}
-                className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
-              >
-                Get In Touch
-              </Button>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left side - Text content */}
+            <div className="animate-fade-in text-center lg:text-left">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent">
+                  Hello, I'm Lohith
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8">
+                A passionate Computer Science undergrad diving deep into 
+                <span className="text-blue-600 font-semibold"> cloud computing</span>, 
+                <span className="text-green-600 font-semibold"> web development</span>, and 
+                <span className="text-purple-600 font-semibold"> problem-solving</span>
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button 
+                  onClick={() => scrollToSection('projects')}
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
+                >
+                  View My Work
+                </Button>
+                <Button 
+                  variant="outline"
+                  onClick={() => scrollToSection('contact')}
+                  className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full transform hover:scale-105 transition-all duration-300"
+                >
+                  Get In Touch
+                </Button>
+              </div>
             </div>
+
+            {/* Right side - Profile image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative">
+                <div className="w-80 h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white bg-gradient-to-br from-blue-100 to-green-100 transform hover:scale-105 transition-all duration-300">
+                  <img 
+                    src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&h=800" 
+                    alt="Lohith - Computer Science Student" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Floating elements around the image */}
+                <div className="absolute -top-4 -right-4 bg-blue-500 text-white p-3 rounded-full shadow-lg animate-float">
+                  <Code size={24} />
+                </div>
+                <div className="absolute -bottom-4 -left-4 bg-green-500 text-white p-3 rounded-full shadow-lg animate-float" style={{animationDelay: '1s'}}>
+                  <GraduationCap size={24} />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll down arrow */}
+          <div className="flex justify-center mt-16">
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="animate-bounce hover:animate-pulse transition-all duration-300"
+            >
+              <div className="flex flex-col items-center text-gray-600 hover:text-blue-600">
+                <span className="text-sm mb-2 font-medium">Learn more about me</span>
+                <ArrowDown size={32} className="animate-pulse" />
+              </div>
+            </button>
           </div>
         </div>
       </section>
 
-      {/* About Me Section */}
+      {/* About Me Section - Enhanced */}
       <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">About Me</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto rounded-full"></div>
+            <p className="text-xl text-gray-600 mt-6">My journey, passion, and what drives me</p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left column */}
+            <div className="space-y-8">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">🚀 My Journey</h3>
+                <div className="flex items-center mb-4">
+                  <div className="bg-blue-500 text-white p-3 rounded-full mr-4">
+                    <User size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Background & Passion</h3>
+                </div>
                 <p className="text-gray-600 leading-relaxed">
                   Currently in my final year of Computer Science, I'm passionate about building scalable solutions 
                   and exploring the endless possibilities of cloud computing. My fascination with AWS and modern 
-                  web technologies drives me to constantly learn and innovate.
+                  web technologies drives me to constantly learn and innovate. I believe in writing clean, 
+                  efficient code that solves real-world problems.
                 </p>
               </div>
               
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">☁️ Cloud Enthusiast</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  From EC2 instances to Lambda functions, I love diving into AWS services and understanding 
-                  how they can solve real-world problems. I'm actively preparing for AWS certifications 
-                  while building cloud-native applications.
+                <div className="flex items-center mb-4">
+                  <div className="bg-green-500 text-white p-3 rounded-full mr-4">
+                    <GraduationCap size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Academic Excellence</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Pursuing BTech in Computer Science with a CGPA of 8.5/10. Active participant in coding 
+                  competitions, hackathons, and technical workshops. Strong foundation in data structures, 
+                  algorithms, and software engineering principles.
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline" className="bg-blue-50 text-blue-700">Data Structures</Badge>
+                  <Badge variant="outline" className="bg-green-50 text-green-700">Algorithms</Badge>
+                  <Badge variant="outline" className="bg-purple-50 text-purple-700">System Design</Badge>
+                </div>
               </div>
             </div>
-            
-            <div className="space-y-6">
+
+            {/* Right column */}
+            <div className="space-y-8">
               <div className="bg-gradient-to-br from-blue-500 to-green-500 p-8 rounded-2xl text-white transform hover:scale-105 transition-all duration-300">
-                <h3 className="text-2xl font-bold mb-4">🎯 Campus Placement Ready</h3>
-                <p className="leading-relaxed">
-                  Actively preparing for campus placements with a strong foundation in DSA, 
-                  system design principles, and hands-on project experience. Ready to contribute 
-                  to innovative teams and tackle challenging problems.
+                <div className="flex items-center mb-4">
+                  <div className="bg-white/20 p-3 rounded-full mr-4">
+                    <Code size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold">Technical Expertise</h3>
+                </div>
+                <p className="leading-relaxed mb-4">
+                  Proficient in Java, JavaScript, PHP, and MySQL with hands-on experience in cloud platforms. 
+                  From EC2 instances to Lambda functions, I love diving into AWS services and understanding 
+                  how they can solve real-world problems.
                 </p>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>• Java Development</div>
+                  <div>• AWS Cloud Services</div>
+                  <div>• Web Technologies</div>
+                  <div>• Database Design</div>
+                </div>
               </div>
               
               <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">💻 Code & Create</h3>
+                <div className="flex items-center mb-4">
+                  <div className="bg-purple-500 text-white p-3 rounded-full mr-4">
+                    <Briefcase size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Campus Placement Ready</h3>
+                </div>
                 <p className="text-gray-600 leading-relaxed">
-                  Whether it's optimizing algorithms, building responsive web interfaces, or 
-                  deploying applications to the cloud, I enjoy every aspect of the development 
-                  lifecycle and the satisfaction of solving complex problems.
+                  Actively preparing for campus placements with a strong foundation in DSA, system design 
+                  principles, and hands-on project experience. Ready to contribute to innovative teams and 
+                  tackle challenging problems in the tech industry.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center mb-4">
+                  <div className="bg-orange-500 text-white p-3 rounded-full mr-4">
+                    <FileText size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">What I'm Working On</h3>
+                </div>
+                <p className="text-gray-600 leading-relaxed">
+                  Currently building cloud-native applications, preparing for AWS certifications, and 
+                  contributing to open-source projects. Always excited about learning new technologies 
+                  and taking on challenging coding problems.
                 </p>
               </div>
             </div>
