@@ -1,4 +1,4 @@
-# ⚡ Lohith's Creative Spark – Portfolio
+# ⚡ Lohith's – Portfolio
 
 Welcome to my personal developer portfolio built with **React** and **TypeScript**!  
 This site is all about showcasing my projects, skills, and the creative energy I bring to tech 🚀
