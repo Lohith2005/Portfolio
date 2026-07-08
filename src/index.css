@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System 
+Professional color palette with support for light/dark modes
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light mode colors - Colorful Matte Finish */
+    --background: 45 40% 96%; /* Warm matte sand/beige */
+    --foreground: 228 60% 15%;
+
+    --card: 45 30% 93%; /* Slightly deeper matte for cards */
+    --card-foreground: 228 60% 15%;
+
+    --popover: 45 30% 93%;
+    --popover-foreground: 228 60% 15%;
+
+    /* Deep Royal Blue primary for light mode (matching dark mode) */
+    --primary: 227 61% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 227 61% 68%;
+
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 228 60% 15%;
+
+    --muted: 220 20% 94%;
+    --muted-foreground: 220 15% 46%;
+
+    --accent: 220 20% 92%;
+    --accent-foreground: 228 60% 15%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 227 61% 55%;
+
+    --radius: 0.75rem;
+
+    /* Custom portfolio colors */
+    --gradient-primary: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(227, 61%, 45%));
+    --gradient-contact: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(227, 61%, 45%));
+    --shadow-card: 0 4px 12px -2px hsl(227, 61%, 55%, 0.08);
+    --shadow-hover: 0 8px 25px -5px hsl(227, 61%, 55%, 0.15);
+    
+    /* Success/completion color */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning/in-progress color */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode — Black backgrounds, #16245A Navy as primary accent */
+    --background: 222 20% 6%;        /* near-black with a hint of blue */
+    --foreground: 210 40% 95%;
+
+    --card: 222 20% 10%;             /* slightly lifted dark for cards */
+    --card-foreground: 210 40% 95%;
+
+    --popover: 222 20% 10%;
+    --popover-foreground: 210 40% 95%;
+
+    /* Primary = #16245A navy blue, brightened to be visible on black */
+    --primary: 227 61% 55%;          /* ~#3B5BC5 — readable navy blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 227 61% 68%;     /* lighter glow */
+
+    --secondary: 222 20% 16%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 222 20% 14%;
+    --muted-foreground: 215 15% 65%;
+
+    --accent: 227 61% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 20% 18%;
+    --input: 222 20% 18%;
+    --ring: 227 61% 55%;
+
+    /* Dark mode custom colors */
+    --gradient-primary: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(210, 80%, 65%));
+    --gradient-contact: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(245, 60%, 65%));
+    --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 12px 40px 0 rgba(22, 36, 90, 0.4);
+
+    --sidebar-background: 222 20% 6%;
+    --sidebar-foreground: 210 40% 95%;
+    --sidebar-primary: 227 61% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 20% 16%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 222 20% 18%;
+    --sidebar-ring: 227 61% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection colors */
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+    color: hsl(var(--primary));
+  }
+
+  /* Custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.5);
+  }
+
+  /* Glassmorphism Utilities */
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-white/10 dark:border-white/5;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-card {
+    @apply glass-panel transition-all duration-500 hover:-translate-y-2 hover:shadow-card-hover rounded-2xl dark:hover:bg-white/5;
+    /* Subtle 3D inner border effect */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.02)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Section transition dividers */
+  .section-divider {
+    @apply w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto rounded-full;
+  }
+}
