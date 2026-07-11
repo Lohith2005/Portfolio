@@ -21,7 +21,7 @@ export function ProjectsSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
-          <div className="inline-block text-primary text-sm font-medium mb-3 tracking-widest uppercase border border-primary/20 rounded-full px-4 py-1 bg-primary/5">
+          <div className="inline-block text-primary text-xs font-semibold mb-3 tracking-wider uppercase border border-primary/10 rounded-full px-2.5 py-0.5 bg-primary/5">
             Portfolio
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
@@ -43,7 +43,7 @@ export function ProjectsSection() {
                 className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center group`}
               >
                 {/* Image Side */}
-                <div className="w-full lg:w-[45%] xl:w-1/2 rounded-2xl overflow-hidden glass-panel border border-border/50 shadow-2xl relative">
+                <div className="w-full lg:w-[45%] xl:w-1/2 rounded-2xl overflow-hidden glass-card border border-border shadow-md relative">
                   <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none"></div>
                   <img 
                     src={project.image} 
@@ -83,7 +83,7 @@ export function ProjectsSection() {
                       <Badge 
                         key={tech}
                         variant="secondary"
-                        className="bg-primary/5 text-primary hover:bg-primary/15 transition-all duration-300 ring-1 ring-primary/20 hover:ring-primary/40 px-3 py-1"
+                        className="bg-[#EEF2FF] dark:bg-primary/10 text-primary hover:bg-primary hover:text-white dark:hover:bg-primary/20 dark:hover:text-primary transition-all duration-300 border border-[#DCE5FF] dark:border-transparent px-3 py-1 rounded-full hover:-translate-y-0.5 cursor-default"
                       >
                         {tech}
                       </Badge>
@@ -96,7 +96,7 @@ export function ProjectsSection() {
                   <div className="flex gap-4 pt-4">
                     <Button 
                       variant="outline"
-                      className="bg-transparent hover:bg-foreground/10 text-foreground hover:text-foreground border border-border hover:border-foreground/30 transition-all duration-300"
+                      className="bg-white dark:bg-background/50 hover:bg-primary/5 text-foreground hover:text-primary border border-border hover:border-primary/40 font-medium transition-premium rounded-2xl"
                       onClick={() => window.open(project.github, "_blank")}
                     >
                       <Github className="w-4 h-4 mr-2" />
@@ -104,7 +104,7 @@ export function ProjectsSection() {
                     </Button>
                     {project.demo !== "#" && (
                       <Button 
-                        className="bg-primary/15 hover:bg-primary text-primary hover:text-primary-foreground border border-primary/30 hover:border-primary transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,91,197,0.3)]"
+                        className="bg-primary hover:bg-[#3F5AF4] text-primary-foreground font-medium transition-premium rounded-2xl shadow-md hover:shadow-card-hover hover:-translate-y-1"
                         onClick={() => window.open(project.demo, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
@@ -123,7 +123,7 @@ export function ProjectsSection() {
           <Button 
             size="lg"
             onClick={() => navigate('/projects')}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 transition-all duration-300 shadow-[0_0_20px_rgba(59,91,197,0.3)] hover:shadow-[0_0_35px_rgba(59,91,197,0.5)] hover:-translate-y-0.5 font-medium group"
+            className="bg-primary hover:bg-[#3F5AF4] text-primary-foreground rounded-2xl px-8 transition-premium hover:shadow-card-hover hover:-translate-y-1 font-medium group shadow-md"
           >
             View All Projects
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

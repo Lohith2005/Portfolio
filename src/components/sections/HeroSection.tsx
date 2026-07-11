@@ -16,7 +16,8 @@ export function HeroSection() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-muted/30">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent dark:bg-gradient-to-br dark:from-background dark:via-background dark:to-muted/30">
+
       {/* Background decoration - Abstract modern background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Very subtle grid pattern */}
@@ -70,7 +71,7 @@ export function HeroSection() {
               <Button
                 onClick={handleViewWork}
                 size="lg"
-                className="flex-1 lg:flex-none bg-primary hover:bg-primary/90 text-primary-foreground font-medium px-4 lg:px-8 py-3 rounded-full transition-all duration-300 hover:shadow-card-hover hover:scale-105 animate-pulse-glow"
+                className="flex-1 lg:flex-none bg-primary hover:bg-[#3F5AF4] text-primary-foreground font-medium px-4 lg:px-8 py-3 rounded-2xl transition-premium hover:shadow-card-hover hover:-translate-y-1 shadow-md"
               >
                 <ExternalLink className="hidden sm:inline-block w-4 h-4 mr-2" />
                 <span className="whitespace-nowrap">View Work</span>
@@ -80,7 +81,7 @@ export function HeroSection() {
                 onClick={handleDownloadResume}
                 variant="outline"
                 size="lg"
-                className="flex-1 lg:flex-none font-medium px-4 lg:px-8 py-3 rounded-full transition-all duration-300 hover:shadow-card-hover hover:scale-105 border-primary/20 hover:border-primary/40"
+                className="flex-1 lg:flex-none bg-white dark:bg-background/50 hover:bg-primary/5 text-foreground hover:text-primary border border-border hover:border-primary/40 font-medium px-4 lg:px-8 py-3 rounded-2xl transition-premium hover:shadow-card-hover hover:-translate-y-1"
               >
                 <FileDown className="hidden sm:inline-block w-4 h-4 mr-2" />
                 <span className="whitespace-nowrap">Resume</span>
@@ -93,7 +94,7 @@ export function HeroSection() {
                 href="https://github.com/lohith2005"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 flex items-center justify-center rounded-full border border-primary/30 text-foreground/80 hover:bg-primary/10 hover:text-primary hover:border-primary/50 hover:shadow-card-hover transition-all duration-300"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-white dark:bg-card border border-[#DCE5FF] dark:border-white/5 text-foreground/80 hover:bg-primary/5 hover:text-primary hover:border-primary/40 hover:-translate-y-1 shadow-sm transition-premium"
               >
                 <Github className="w-5 h-5" />
               </a>
@@ -101,13 +102,13 @@ export function HeroSection() {
                 href="https://linkedin.com/in/lohithvellure"
                 target="_blank"
                 rel="noreferrer"
-                className="w-11 h-11 flex items-center justify-center rounded-full border border-primary/30 text-foreground/80 hover:bg-primary/10 hover:text-primary hover:border-primary/50 hover:shadow-card-hover transition-all duration-300"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-white dark:bg-card border border-[#DCE5FF] dark:border-white/5 text-foreground/80 hover:bg-primary/5 hover:text-primary hover:border-primary/40 hover:-translate-y-1 shadow-sm transition-premium"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="mailto:vellurelohith1@gmail.com"
-                className="w-11 h-11 flex items-center justify-center rounded-full border border-primary/30 text-foreground/80 hover:bg-primary/10 hover:text-primary hover:border-primary/50 hover:shadow-card-hover transition-all duration-300"
+                className="w-11 h-11 flex items-center justify-center rounded-full bg-white dark:bg-card border border-[#DCE5FF] dark:border-white/5 text-foreground/80 hover:bg-primary/5 hover:text-primary hover:border-primary/40 hover:-translate-y-1 shadow-sm transition-premium"
               >
                 <Mail className="w-5 h-5" />
               </a>
@@ -120,13 +121,13 @@ export function HeroSection() {
             <div className="relative">
 
               {/* Outer rotating dotted ring */}
-              <div className="absolute -inset-5 xl:-inset-7 border-[4px] border-dashed border-primary/20 rounded-full animate-[spin_30s_linear_infinite] pointer-events-none"></div>
+              <div className="absolute -inset-6 xl:-inset-7 border-[4px] border-dashed border-primary/[0.18] dark:border-primary/30 rounded-full animate-[spin_30s_linear_infinite] pointer-events-none"></div>
 
               {/* Inner static solid light ring */}
-              <div className="absolute -inset-2 xl:-inset-3 border-[2px] border-solid border-primary/15 rounded-full pointer-events-none"></div>
+              <div className="absolute -inset-4 xl:-inset-5 border-[2px] border-solid border-primary/[0.12] dark:border-primary/20 rounded-full pointer-events-none"></div>
 
               {/* Profile image container without dark border */}
-              <div className="relative w-56 h-56 xl:w-80 xl:h-80 overflow-hidden rounded-full shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10 bg-slate-900">
+              <div className="relative w-56 h-56 xl:w-80 xl:h-80 overflow-hidden rounded-full shadow-[0_20px_60px_rgba(79,107,255,0.08)] dark:shadow-2xl transition-all duration-500 hover:scale-[1.02] z-10 bg-slate-900">
                 {/* Light Theme Profile Image */}
                 <img
                   src={profilePhotoLight}

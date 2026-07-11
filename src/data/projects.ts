@@ -12,7 +12,7 @@ export const projects = [
     github: "https://github.com/Lohith2005/Job-Application-Tracker",
     demo: "https://job-application-tracker-bk1u.onrender.com/",
     color: "success",
-    image: "https://woovina.com/images/2020/04/14/main-demo-cover-min.png"
+    image: "src/assets/JobApplicationTracker.png"
   },
   {
     title: "AI Code Analyzer by Gemini Api", 
@@ -28,7 +28,7 @@ export const projects = [
     github: "https://github.com/Lohith2005/AICodeAnalyzer",
     demo: "https://aicodeanalyzer.onrender.com/", 
     color: "primary",
-    image: "https://woovina.com/images/2020/04/14/main-demo-cover-min.png"
+    image: "src/assets/Ai-CodeAnalyzer.png"
   },
   {
     title: "Automated Bill Processing System (AWS)", 
@@ -44,7 +44,7 @@ export const projects = [
     github: "https://github.com/Lohith2005/Serverless-Bill-Processor-AmazonWebService",
     demo: "https://github.com/Lohith2005/Serverless-Bill-Processor-AmazonWebService", 
     color: "primary",
-    image: "https://woovina.com/images/2020/04/14/main-demo-cover-min.png"
+    image: "src/assets/aws-architecture-dark.png"
   },
   {
     title: "Weather Wave",
@@ -60,6 +60,6 @@ export const projects = [
     github: "#",
     demo: "#",
     color: "warning",
-    image: "https://woovina.com/images/2020/04/14/main-demo-cover-min.png"
+    image: "src/assets/weather.png"
   }
 ];

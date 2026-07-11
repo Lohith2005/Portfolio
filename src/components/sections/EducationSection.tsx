@@ -17,8 +17,8 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 const education = {
   degree: "Bachelor of Technology in Computer Science",
   university: "MohanBabu University",
-  duration: "2021 - 2026",
-  cgpa: "9.18/10",
+  duration: "2022 - 2026",
+  cgpa: "9.24/10",
   description: `Specializing in software development, data structures, algorithms, and cloud computing. 
   Member of the AWS Cloud Club and Coordinator of the CETA-Technova Club, actively involved in 
   organizing and participating in technical workshops and community initiatives.`
@@ -26,6 +26,16 @@ const education = {
 
 // --- CORRECTED DATA ---
 const achievements = [
+  {
+  title: "SAP Certified Associate – SAP Generative AI Developer",
+  provider: "SAP",
+  year: "2026",
+  status: "Certified",
+  description: "This certification validates my ability to develop and integrate Generative AI solutions within the SAP ecosystem, leveraging SAP AI capabilities to build intelligent enterprise applications.",
+  color: "primary",
+  link: "https://www.credly.com/badges/190eb1ca-6790-4d21-8af5-e13c73dd35cc/public_url",
+  important: true
+},
   {
     title: "AWS Certified Cloud Practitioner", // Corrected typo
     provider: "Amazon Web Services",
@@ -97,8 +107,8 @@ export function EducationSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
-          <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 mb-4 ring-1 ring-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+          <Badge variant="outline" className="bg-primary/5 text-primary border-primary/10 mb-4 font-semibold text-xs px-2.5 py-0.5 rounded-full select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary mr-1.5 animate-pulse"></span>
             Education
           </Badge>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4">Academic Journey</h2>
@@ -112,7 +122,7 @@ export function EducationSection() {
           <Card className="glass-card overflow-hidden animate-scale-in">
             <CardContent className="p-8">
               <div className="flex flex-col md:flex-row items-start gap-6">
-                <div className="bg-primary/15 p-4 rounded-2xl ring-1 ring-primary/20 shadow-[0_0_20px_rgba(59,91,197,0.1)]">
+                <div className="bg-[#EEF2FF] dark:bg-primary/15 p-4 rounded-2xl border border-[#DCE5FF] dark:border-transparent shadow-sm">
                   <GraduationCap className="w-8 h-8 text-primary" />
                 </div>
                 <div className="flex-1">
@@ -215,8 +225,8 @@ export function EducationSection() {
               </CarouselContent>
               {totalSlides > 1 && (
                 <>
-                  <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 hidden md:flex glass-panel border-primary/20 hover:border-primary/40 text-primary" />
-                  <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 z-10 hidden md:flex glass-panel border-primary/20 hover:border-primary/40 text-primary" />
+                  <CarouselPrevious className="absolute left-[-20px] top-1/2 -translate-y-1/2 z-10 hidden md:flex glass-panel border-border hover:border-primary/40 text-primary transition-premium" />
+                  <CarouselNext className="absolute right-[-20px] top-1/2 -translate-y-1/2 z-10 hidden md:flex glass-panel border-border hover:border-primary/40 text-primary transition-premium" />
                 </>
               )}
             </Carousel>
@@ -229,9 +239,9 @@ export function EducationSection() {
                     key={index}
                     variant="ghost"
                     size="sm"
-                    className={`w-8 h-8 rounded-full transition-all duration-300 ${
+                    className={`w-8 h-8 rounded-full transition-premium ${
                       index === currentSlide
-                        ? 'bg-primary text-primary-foreground shadow-[0_0_15px_rgba(59,91,197,0.4)]'
+                        ? 'bg-primary text-primary-foreground shadow-md'
                         : 'hover:bg-primary/10 hover:text-primary'
                     }`}
                     onClick={() => api?.scrollTo(index)}

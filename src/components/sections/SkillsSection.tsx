@@ -5,22 +5,38 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 
 const skillCategories = [
   {
-    title: "Technical Skills",
+    title: "Languages",
     icon: Code,
     color: "success",
-    skills: ["Java", "HTML", "CSS", "AWS", "JavaScript", "React", "SQL", "Python"]
+    skills: ["Java", "JavaScript", "SQL", "Python"]
   },
   {
-    title: "Soft Skills", 
-    icon: Users,
-    color: "primary",
-    skills: ["Communication", "Teamwork", "Problem Solving", "Time Management", "Adaptability"]
-  },
-  {
-    title: "Tools",
+    title: "Frameworks & Technologies", 
     icon: Wrench,
+    color: "primary",
+    skills: [
+      "React",
+      "Node.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "REST APIs",
+      "AWS"
+    ]
+  },
+  {
+    title: "Tools & Platforms",
+    icon: Users,
     color: "warning",
-    skills: ["Git", "GitHub", "VS Code", "Canva"]
+    skills: [
+      "Generative AI",
+      "AI Integration",
+      "Postman",
+      // "Linux",
+      "Prompt Engineering",
+      "GitHub",
+      "SAP BTP"
+    ]
   }
 ];
 
@@ -35,7 +51,7 @@ export function SkillsSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
-          <div className="inline-block text-primary text-sm font-medium mb-3 tracking-widest uppercase border border-primary/20 rounded-full px-4 py-1 bg-primary/5">
+          <div className="inline-block text-primary text-xs font-semibold mb-3 tracking-wider uppercase border border-primary/10 rounded-full px-2.5 py-0.5 bg-primary/5">
             Skills & Technologies
           </div>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4">Technical Expertise</h2>
@@ -57,7 +73,7 @@ export function SkillsSection() {
                 <Card className="group glass-card overflow-hidden h-full">
                 <CardHeader className="pb-6">
                   <div className="flex items-center gap-4">
-                    <div className="bg-primary/15 p-3 rounded-xl group-hover:bg-primary/25 transition-all duration-300 ring-1 ring-primary/20 group-hover:ring-primary/40 group-hover:shadow-[0_0_15px_rgba(59,91,197,0.15)]">
+                    <div className="bg-[#EEF2FF] dark:bg-primary/15 p-3 rounded-xl group-hover:bg-primary/25 transition-premium border border-[#DCE5FF] dark:border-transparent group-hover:shadow-[0_0_15px_rgba(79,107,255,0.15)]">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <CardTitle className="text-lg">{category.title}</CardTitle>
@@ -70,7 +86,7 @@ export function SkillsSection() {
                       <Badge 
                         key={skill}
                         variant="outline" 
-                        className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 hover:border-primary/40 transition-all duration-300 ring-1 ring-primary/10 hover:ring-primary/30"
+                        className="bg-[#EEF2FF] dark:bg-primary/10 text-primary border-[#DCE5FF] dark:border-transparent hover:bg-primary hover:text-white dark:hover:bg-primary/20 dark:hover:text-primary px-3 py-1 rounded-full hover:-translate-y-0.5 transition-premium cursor-default"
                       >
                         {skill}
                       </Badge>

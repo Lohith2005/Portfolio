@@ -45,7 +45,7 @@ export function ContactSection() {
           <div className="max-w-2xl mx-auto text-center">
             <ScrollReveal>
               <div className="glass-card p-10 mb-8">
-                <div className="w-16 h-16 bg-primary/15 rounded-2xl ring-1 ring-primary/30 flex items-center justify-center mx-auto mb-6 shadow-[0_0_20px_rgba(59,91,197,0.15)]">
+                <div className="w-16 h-16 bg-[#EEF2FF] dark:bg-primary/15 rounded-2xl border border-[#DCE5FF] dark:border-transparent flex items-center justify-center mx-auto mb-6 shadow-sm">
                   <FileDown className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold mb-3">Download My Resume</h3>
@@ -54,7 +54,7 @@ export function ContactSection() {
                 </p>
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 transition-all duration-300 shadow-[0_0_20px_rgba(59,91,197,0.3)] hover:shadow-[0_0_35px_rgba(59,91,197,0.5)] hover:-translate-y-0.5 font-medium"
+                  className="bg-primary hover:bg-[#3F5AF4] text-primary-foreground rounded-2xl px-8 transition-premium shadow-md hover:shadow-card-hover hover:-translate-y-1 font-medium"
                   onClick={() => {
                     toast({
                       title: "Resume Loading",
@@ -80,8 +80,6 @@ export function ContactSection() {
 
       {/* Contact Section */}
       <section id="contact" className="py-20 relative overflow-hidden">
-        {/* Deep navy/teal gradient bg */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background"></div>
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full bg-primary/3"></div>
           <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/8 rounded-full blur-[120px]"></div>
@@ -90,7 +88,7 @@ export function ContactSection() {
 
         <div className="container mx-auto px-4 relative z-10">
           <ScrollReveal className="text-center mb-16">
-            <div className="inline-block text-primary text-sm font-medium mb-3 tracking-widest uppercase border border-primary/20 rounded-full px-4 py-1 bg-primary/5">
+            <div className="inline-block text-primary text-xs font-semibold mb-3 tracking-wider uppercase border border-primary/10 rounded-full px-2.5 py-0.5 bg-primary/5">
               Get in Touch
             </div>
             <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4 mt-2">Let's Connect!</h2>
@@ -115,7 +113,7 @@ export function ContactSection() {
                   >
                     <CardContent className="p-6">
                       <div className="flex items-center gap-4">
-                        <div className="bg-primary/15 p-3 rounded-xl group-hover:bg-primary/25 transition-all duration-300 ring-1 ring-primary/20 group-hover:ring-primary/40 group-hover:shadow-[0_0_15px_rgba(59,91,197,0.2)]">
+                        <div className="bg-[#EEF2FF] dark:bg-primary/15 p-3 rounded-xl group-hover:bg-primary/25 transition-premium border border-[#DCE5FF] dark:border-transparent group-hover:shadow-[0_0_15px_rgba(79,107,255,0.2)]">
                           <Icon className="w-6 h-6 text-primary" />
                         </div>
                         <div>

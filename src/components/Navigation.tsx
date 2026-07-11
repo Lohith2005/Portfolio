@@ -70,8 +70,8 @@ export function Navigation() {
         isMobileMenuOpen ? "rounded-2xl lg:rounded-full" : "rounded-full"
       } ${
         isScrolled || isMobileMenuOpen
-          ? "glass-panel shadow-lg shadow-black/5 dark:shadow-black/20" 
-          : "bg-transparent md:glass-panel"
+          ? "nav-glass shadow-md dark:shadow-black/20" 
+          : "bg-transparent md:nav-glass"
       }`}
     >
       <div className="px-3 py-3 md:px-4 md:py-2 xl:px-6 xl:py-2">

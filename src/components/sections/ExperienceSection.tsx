@@ -13,8 +13,8 @@ export function ExperienceSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <ScrollReveal className="text-center mb-16">
-          <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20 mb-4 ring-1 ring-primary/20">
-            <span className="w-2 h-2 rounded-full bg-primary mr-2 animate-pulse"></span>
+          <Badge variant="outline" className="bg-primary/5 text-primary border-primary/10 mb-4 font-semibold text-xs px-2.5 py-0.5 rounded-full select-none">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary mr-1.5 animate-pulse"></span>
             Journey
           </Badge>
           <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-4 tracking-tight">Experience</h2>
@@ -33,12 +33,12 @@ export function ExperienceSection() {
                 className="relative pl-8 md:pl-12"
               >
                 {/* Timeline Line & Dot */}
-                <div className="absolute left-0 top-0 bottom-[-2rem] w-px bg-border/50 group-last:bottom-0">
-                  <div className="absolute left-[-4px] top-6 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,91,197,0.8)]"></div>
+                <div className="absolute left-0 top-0 bottom-[-2rem] w-px bg-[#D9E2F2] dark:bg-border/50 group-last:bottom-0">
+                  <div className="absolute left-[-4px] top-6 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(79,107,255,0.5)]"></div>
                 </div>
 
                 {/* Experience Card */}
-                <div className="glass-panel rounded-2xl p-6 md:p-8 hover:bg-card/80 transition-colors duration-300">
+                <div className="glass-card p-6 md:p-8">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                     <div>
                       <h3 className="text-xl font-bold text-foreground">{exp.role}</h3>

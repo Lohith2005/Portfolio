@@ -1,53 +1,51 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { User, Code, Award, TrendingUp } from "lucide-react";
+import { User, Code, Award, TrendingUp, Target } from "lucide-react";
 
 const aboutCards = [
   {
     title: "Background & Passion",
     icon: User,
-    content: `Currently in my final year of Computer Science, I specialize in front-end web 
-    development and am proficient in Java. My passion lies in crafting intuitive 
-    and engaging user interfaces, while continuously expanding my expertise in 
-    cloud computing, particularly with AWS and Linux OS. With a hands-on 
-    approach and a constant drive for learning, I believe in writing clean, efficient 
-    code that solves real-world problems.`,
+    content: `I'm a B.Tech Computer Science graduate and Associate SAP BTP Consultant passionate 
+      about building modern full-stack web applications and AI-powered solutions. 
+      I enjoy turning ideas into fast, scalable, and user-friendly digital experiences while 
+      continuously learning new technologies.`,
     gradient: "from-primary/10 to-primary-glow/10",
   },
   {
     title: "Technical Expertise",
     icon: Code,
-    content: `Proficient in Java, JavaScript and MySQL with hands-on experience in cloud 
-    platforms. From EC2 instances to Lambda functions, I love diving into AWS 
-    services and understanding how they can solve real-world problems.`,
+    content: `I work with React, JavaScript, Java, Node.js, MySQL, AWS, 
+      and Git to build responsive frontends, scalable backends, and AI-integrated applications.`,
     skills: [
-      "Java Development",
-      "AWS Cloud Services", 
-      "Web Technologies",
-      "Database Design"
+      "Full-Stack Development",
+      "Java & Node.js",
+      "AWS Cloud Services",
+      "AI API Integration",
+      "Git & GitHub"
     ],
     gradient: "from-success/10 to-success/20",
   },
   {
-    title: "Academic Excellence",
-    icon: Award,
-    content: `Pursuing BTech in Computer Science with a CGPA of 9.1/10. Active participant 
-    in coding competitions and hackathons. Strong foundation in data structures, 
-    algorithms, and software engineering principles.`,
+    title: "Professional Focus",
+    icon: Target,
+    content: `Working as an Associate SAP BTP Consultant 
+      while building scalable full-stack web applications and 
+      AI-powered solutions with modern technologies.`,
     tags: [
-      "Data Structures",
-      "Algorithms", 
-      "System Design",
-      "Object Oriented Design"
+      "SAP BTP",
+      "Full-Stack Development",
+      "AI Applications",
+      "Cloud Technologies"
     ],
     gradient: "from-success/10 to-warning/10",
   },
   {
     title: "What I'm Working On",
     icon: TrendingUp,
-    content: `Currently focused on mastering Data Structures and Algorithms with Java, 
-    while also preparing for AWS certification and contributing to open-source 
-    projects. Always excited about learning new technologies and taking on 
-    challenging coding problems.`,
+    content: `Currently developing enterprise applications on SAP BTP, creating
+      AI-powered full-stack projects, and continuously exploring modern backend
+      development, cloud technologies, scalable architectures, and emerging AI
+      frameworks to build impactful software solutions.`,
     gradient: "from-warning/10 to-primary/10",
   },
 ];
@@ -63,7 +61,7 @@ export function AboutSection() {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block text-primary text-sm font-medium mb-3 tracking-widest uppercase border border-primary/20 rounded-full px-4 py-1 bg-primary/5">
+          <div className="inline-block text-primary text-xs font-semibold mb-3 tracking-wider uppercase border border-primary/10 rounded-full px-2.5 py-0.5 bg-primary/5">
             About Me
           </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">My Story & Vision</h2>
@@ -76,21 +74,21 @@ export function AboutSection() {
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 lg:gap-8">
           {aboutCards.map((card, index) => {
             const Icon = card.icon;
-            
+
             return (
-              <Card 
+              <Card
                 key={card.title}
                 className={`group glass-card overflow-hidden animate-fade-in-up`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-7">
                   <div className="flex items-center mb-5">
-                    <div className="bg-primary/15 p-3 rounded-xl mr-4 group-hover:bg-primary/25 transition-all duration-300 ring-1 ring-primary/20 group-hover:ring-primary/40 group-hover:shadow-[0_0_15px_rgba(59,91,197,0.15)]">
+                    <div className="bg-[#EEF2FF] dark:bg-primary/15 p-3 rounded-xl mr-4 group-hover:bg-primary/25 transition-premium border border-[#DCE5FF] dark:border-transparent group-hover:shadow-[0_0_15px_rgba(79,107,255,0.15)]">
                       <Icon className="w-6 h-6 text-primary" />
                     </div>
                     <h3 className="text-xl font-semibold">{card.title}</h3>
                   </div>
-                  
+
                   <p className="text-muted-foreground leading-relaxed mb-5">
                     {card.content}
                   </p>
@@ -101,7 +99,7 @@ export function AboutSection() {
                       {card.skills.map((skill) => (
                         <span
                           key={skill}
-                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/20 ring-1 ring-primary/20 hover:ring-primary/40"
+                          className="px-3 py-1 bg-[#EEF2FF] dark:bg-primary/10 text-primary rounded-full text-sm font-medium transition-premium hover:-translate-y-0.5 hover:bg-primary hover:text-white border border-[#DCE5FF] dark:border-transparent cursor-default"
                         >
                           {skill}
                         </span>
@@ -115,7 +113,7 @@ export function AboutSection() {
                       {card.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/20 ring-1 ring-primary/20 hover:ring-primary/40"
+                          className="px-3 py-1 bg-[#EEF2FF] dark:bg-primary/10 text-primary rounded-full text-sm font-medium transition-premium hover:-translate-y-0.5 hover:bg-primary hover:text-white border border-[#DCE5FF] dark:border-transparent cursor-default"
                         >
                           {tag}
                         </span>

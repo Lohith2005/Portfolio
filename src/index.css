@@ -9,44 +9,45 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light mode colors - Colorful Matte Finish */
-    --background: 45 40% 96%; /* Warm matte sand/beige */
-    --foreground: 228 60% 15%;
+    /* Light mode colors - Premium Warm Off-White */
+    --background: 228 45% 98%; /* #F7F8FC (Warm off-white) */
+    --bg-gradient: radial-gradient(circle at 15% 20%, rgba(79, 107, 255, 0.025), transparent 35%), radial-gradient(circle at 85% 30%, rgba(79, 107, 255, 0.02), transparent 30%), hsl(228 45% 98%);
+    --foreground: 222 47% 11%; /* #0F172A (Heading / Dark Text) */
 
-    --card: 45 30% 93%; /* Slightly deeper matte for cards */
-    --card-foreground: 228 60% 15%;
+    --card: 0 0% 100%; /* #FFFFFF (White surface) */
+    --card-foreground: 222 47% 11%;
 
-    --popover: 45 30% 93%;
-    --popover-foreground: 228 60% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
     /* Deep Royal Blue primary for light mode (matching dark mode) */
-    --primary: 227 61% 55%;
+    --primary: 230 100% 65%; /* #4F6BFF */
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 227 61% 68%;
+    --primary-glow: 230 100% 75%; /* Soft glow */
 
-    --secondary: 220 20% 92%;
-    --secondary-foreground: 228 60% 15%;
+    --secondary: 229 100% 97%; /* #EEF2FF (Primary Light / Soft Blue) */
+    --secondary-foreground: 230 100% 65%; /* #4F6BFF */
 
-    --muted: 220 20% 94%;
-    --muted-foreground: 220 15% 46%;
+    --muted: 213 27% 95%; /* Very light gray */
+    --muted-foreground: 215 16% 47%; /* #64748B */
 
-    --accent: 220 20% 92%;
-    --accent-foreground: 228 60% 15%;
+    --accent: 229 100% 97%;
+    --accent-foreground: 230 100% 65%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 227 61% 55%;
+    --border: 219 50% 95%; /* #E6ECF7 (Soft blue-gray border) */
+    --input: 219 50% 95%;
+    --ring: 230 100% 65%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio colors */
-    --gradient-primary: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(227, 61%, 45%));
-    --gradient-contact: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(227, 61%, 45%));
-    --shadow-card: 0 4px 12px -2px hsl(227, 61%, 55%, 0.08);
-    --shadow-hover: 0 8px 25px -5px hsl(227, 61%, 55%, 0.15);
+    --gradient-primary: linear-gradient(135deg, hsl(230, 100%, 65%), hsl(230, 100%, 55%));
+    --gradient-contact: linear-gradient(135deg, hsl(230, 100%, 65%), hsl(230, 100%, 55%));
+    --shadow-card: 0 0 40px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+    --shadow-hover: 0 15px 35px rgba(15, 23, 42, 0.10), 0 0 25px rgba(15, 23, 42, 0.05);
     
     /* Success/completion color */
     --success: 142 71% 45%;
@@ -78,8 +79,9 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Dark mode — Black backgrounds, #16245A Navy as primary accent */
+    /* Dark mode — Black backgrounds, #4F6BFF Royal Blue as primary accent */
     --background: 222 20% 6%;        /* near-black with a hint of blue */
+    --bg-gradient: hsl(222 20% 6%);
     --foreground: 210 40% 95%;
 
     --card: 222 20% 10%;             /* slightly lifted dark for cards */
@@ -88,10 +90,10 @@ All colors MUST be HSL.
     --popover: 222 20% 10%;
     --popover-foreground: 210 40% 95%;
 
-    /* Primary = #16245A navy blue, brightened to be visible on black */
-    --primary: 227 61% 55%;          /* ~#3B5BC5 — readable navy blue */
+    /* Primary = Royal Blue accent */
+    --primary: 230 100% 65%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 227 61% 68%;     /* lighter glow */
+    --primary-glow: 230 100% 75%;
 
     --secondary: 222 20% 16%;
     --secondary-foreground: 210 40% 95%;
@@ -99,7 +101,7 @@ All colors MUST be HSL.
     --muted: 222 20% 14%;
     --muted-foreground: 215 15% 65%;
 
-    --accent: 227 61% 55%;
+    --accent: 230 100% 65%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -107,22 +109,22 @@ All colors MUST be HSL.
 
     --border: 222 20% 18%;
     --input: 222 20% 18%;
-    --ring: 227 61% 55%;
+    --ring: 230 100% 65%;
 
     /* Dark mode custom colors */
-    --gradient-primary: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(210, 80%, 65%));
-    --gradient-contact: linear-gradient(135deg, hsl(227, 61%, 55%), hsl(245, 60%, 65%));
+    --gradient-primary: linear-gradient(135deg, hsl(230, 100% ,65%), hsl(210, 80%, 65%));
+    --gradient-contact: linear-gradient(135deg, hsl(230, 100%, 65%), hsl(245, 60%, 65%));
     --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     --shadow-hover: 0 12px 40px 0 rgba(22, 36, 90, 0.4);
 
     --sidebar-background: 222 20% 6%;
     --sidebar-foreground: 210 40% 95%;
-    --sidebar-primary: 227 61% 55%;
+    --sidebar-primary: 230 100% 65%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 222 20% 16%;
     --sidebar-accent-foreground: 210 40% 95%;
     --sidebar-border: 222 20% 18%;
-    --sidebar-ring: 227 61% 55%;
+    --sidebar-ring: 230 100% 65%;
   }
 }
 
@@ -132,9 +134,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply text-[#475569] dark:text-[#E2E8F0] font-inter;
+    background: var(--bg-gradient);
     font-feature-settings: 'cv11', 'ss01';
     font-variation-settings: 'opsz' 32;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground font-bold;
   }
 
   /* Smooth scrolling */
@@ -168,15 +175,28 @@ All colors MUST be HSL.
 
   /* Glassmorphism Utilities */
   .glass-panel {
-    @apply bg-card/60 backdrop-blur-xl border border-white/10 dark:border-white/5;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    @apply bg-card backdrop-blur-xl dark:border-white/5;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    box-shadow: var(--shadow-card);
+  }
+
+  .nav-glass {
+    @apply bg-white/[0.72] backdrop-blur-[18px] border border-[#DCE5FF]/80 dark:bg-card/75 dark:border-white/5;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   }
 
   .glass-card {
-    @apply glass-panel transition-all duration-500 hover:-translate-y-2 hover:shadow-card-hover rounded-2xl dark:hover:bg-white/5;
+    @apply glass-panel transition-premium hover:-translate-y-[6px] hover:shadow-card-hover rounded-2xl dark:hover:bg-white/5;
     /* Subtle 3D inner border effect */
     position: relative;
     overflow: hidden;
+  }
+
+  .transition-premium {
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .glass-card::before {
@@ -208,5 +228,76 @@ All colors MUST be HSL.
   /* Section transition dividers */
   .section-divider {
     @apply w-24 h-1 bg-gradient-to-r from-primary to-transparent mx-auto rounded-full;
+  }
+
+  /* Fluid Paint Background Animations (Morphing Blobs) */
+  @keyframes fluid-1 {
+    0%, 100% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+      border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+      transform: translate(8vw, 12vh) rotate(120deg) scale(1.05);
+    }
+    66% {
+      border-radius: 28% 72% 35% 65% / 40% 60% 40% 60%;
+      transform: translate(-4vw, 16vh) rotate(240deg) scale(0.95);
+    }
+  }
+  @keyframes fluid-2 {
+    0%, 100% {
+      border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+      border-radius: 28% 72% 35% 65% / 40% 60% 40% 60%;
+      transform: translate(-10vw, -8vh) rotate(-120deg) scale(0.95);
+    }
+    66% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate(6vw, 12vh) rotate(-240deg) scale(1.05);
+    }
+  }
+  @keyframes fluid-3 {
+    0%, 100% {
+      border-radius: 28% 72% 35% 65% / 40% 60% 40% 60%;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate(12vw, -16vh) rotate(180deg) scale(1.08);
+    }
+    66% {
+      border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+      transform: translate(-8vw, -8vh) rotate(360deg) scale(0.92);
+    }
+  }
+  @keyframes fluid-4 {
+    0%, 100% {
+      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      transform: translate(0, 0) rotate(0deg) scale(1);
+    }
+    33% {
+      border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+      transform: translate(-6vw, 14vh) rotate(120deg) scale(1.04);
+    }
+    66% {
+      border-radius: 28% 72% 35% 65% / 40% 60% 40% 60%;
+      transform: translate(10vw, -12vh) rotate(240deg) scale(0.96);
+    }
+  }
+
+  .animate-fluid-1 {
+    animation: fluid-1 25s ease-in-out infinite;
+  }
+  .animate-fluid-2 {
+    animation: fluid-2 30s ease-in-out infinite;
+  }
+  .animate-fluid-3 {
+    animation: fluid-3 35s ease-in-out infinite;
+  }
+  .animate-fluid-4 {
+    animation: fluid-4 28s ease-in-out infinite;
   }
 }
