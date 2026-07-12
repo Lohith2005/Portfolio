@@ -5,10 +5,10 @@ const aboutCards = [
   {
     title: "Background & Passion",
     icon: User,
-    content: `I'm a B.Tech Computer Science graduate and Associate SAP BTP Consultant passionate 
-      about building modern full-stack web applications and AI-powered solutions. 
-      I enjoy turning ideas into fast, scalable, and user-friendly digital experiences while 
-      continuously learning new technologies.`,
+    content: `I'm a B.Tech Computer Science graduate passionate about building modern full-stack web applications 
+      and AI-powered solutions. Currently working as an Associate SAP BTP Technical Consultant, 
+      I enjoy turning ideas into fast, scalable, and user-friendly digital experiences while continuously 
+      exploring emerging technologies.`,
     gradient: "from-primary/10 to-primary-glow/10",
   },
   {
@@ -28,9 +28,9 @@ const aboutCards = [
   {
     title: "Professional Focus",
     icon: Target,
-    content: `Working as an Associate SAP BTP Consultant 
-      while building scalable full-stack web applications and 
-      AI-powered solutions with modern technologies.`,
+    content: `Currently working as an Associate SAP BTP Technical Consultant, 
+      with a strong focus on building scalable full-stack applications, AI-powered solutions, 
+      and modern cloud-based software.`,
     tags: [
       "SAP BTP",
       "Full-Stack Development",
@@ -42,10 +42,10 @@ const aboutCards = [
   {
     title: "What I'm Working On",
     icon: TrendingUp,
-    content: `Currently developing enterprise applications on SAP BTP, creating
-      AI-powered full-stack projects, and continuously exploring modern backend
-      development, cloud technologies, scalable architectures, and emerging AI
-      frameworks to build impactful software solutions.`,
+    content: `Currently developing enterprise applications on SAP BTP while building 
+      AI-powered full-stack projects. I'm continuously exploring backend development, 
+      scalable architectures, cloud technologies, and emerging AI frameworks to create 
+      impactful software solutions.`,
     gradient: "from-warning/10 to-primary/10",
   },
 ];
